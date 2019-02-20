@@ -3,17 +3,20 @@
 import argparse
 
 def find_max_profit(prices):
-	maxProfit = [0]
+	maxProfit = None
 	for b in range(0, len(prices)):
-		for s in range(prices.index(prices[b]), len(prices)):
+		for s in range(prices.index(prices[b]) + 1, len(prices)):
 			profit = prices[s] - prices[b]
-			if profit > maxProfit[0]:
+			print(profit)
+			if maxProfit == None:
+				maxProfit = profit
+			elif profit > maxProfit:
 				temp = profit
-				maxProfit[0] = temp
+				maxProfit = temp
 			# print (prices[s])
 			# print(maxProfit)
 		# print (prices[b])
-	return maxProfit[0]
+	return maxProfit
 	# pass
 
 # prices = [1050, 270, 1540, 3800, 2]

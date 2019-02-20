@@ -6,34 +6,28 @@ import math
 def recipe_batches(recipe, ingredients):
 		maxSingleServings = None
 		for ingredient, quantity in recipe.items():
-				print(f"{ingredient}-{quantity}")
+				# print(f"{ingredient}-{quantity}")
 				if ingredient in ingredients:
 					for availableIngredient, availableQuantity in ingredients.items():
 							if ingredient == availableIngredient:
-									print(f"{ingredient}")
+									# print(f"{ingredient}")
 									if quantity > availableQuantity:
-										print(f"{ingredient} is about to return 0")
+										# print(f"{ingredient} is about to return 0")
 										return 0
 									maxSingle = availableQuantity // quantity
-									print(f"{maxSingle}")
+									# print(f"{maxSingle}")
 									if maxSingleServings == None:
 										temp = maxSingle
 										maxSingleServings = temp
-										print(f"hello i'm maxSingle: {maxSingleServings}")
-									elif maxSingle < maxSingleServings:
+										# print(f"hello i'm maxSingle: {maxSingleServings}")
+									if maxSingle < maxSingleServings:
 										temp = maxSingle
 										maxSingleServings = temp
-										print(f"hello i'm maxSingle: {maxSingleServings}")
+										# print(f"hello i'm maxSingle: {maxSingleServings}")
 										pass
-							# else:
-							# 		temp = 0
-							# 		maxSingle = temp
-							# 		maxSingleServings = temp
-							# 		print(f"hello i'm maxSingle: {maxSingleServings}")
-							# 		pass
 				else:
 					return 0
-		print(f"hello!!!!!! i'm maxSingle: {maxSingleServings}")
+		print(f"hello! i'm maxSingle: {maxSingleServings}")
 		return maxSingleServings
 
 
